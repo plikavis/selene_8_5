@@ -21,7 +21,8 @@ def test_form():
     # Subject
     browser.element('#subjectsInput').type('Maths').press_enter()
     # Choose hobby
-    browser.element('[for=hobbies-checkbox-1]').click()
+    # browser.element('[for=hobbies-checkbox-1]').click()
+    browser.element('#hobbiesWrapper').element(by.text('Sports')).click()
     # Write address
     browser.element('#currentAddress').type('Tbilisi')
     # Choose country and city
@@ -31,17 +32,18 @@ def test_form():
     # Press button
     browser.element('#submit').click()
 
-    browser.all('.modal-content').should(have.exact_texts(
-        'Testname',
-        'Test_Lastname',
+    browser.element('.table').all('tr td:nth-child(2)').should(have.texts(
+        'Test_name Test_Lastname',
         'Test@test.com',
         'Female',
         '1234567890',
         '25 December,2020',
         'Maths',
+        'Sports',
+        '',
         'Tbilisi',
         'NCR Delhi'
     ))
-    browser.element('closeLargeModal').click()
+    browser.element('#closeLargeModal').click()
 
 
