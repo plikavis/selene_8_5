@@ -21,7 +21,7 @@ def test_form():
     # Subject
     browser.element('#subjectsInput').type('Maths').press_enter()
     # Choose hobby
-    browser.element('[for=hobbies-checkbox-1]').with_(timeout=4.0).click()
+    browser.element('[for=hobbies-checkbox-1]').click()
     # Write address
     browser.element('#currentAddress').type('Tbilisi')
     # Choose country and city
@@ -39,9 +39,9 @@ def test_form():
         '1234567890',
         '25 December,2020',
         'Maths',
-        'Sports',
         'Tbilisi',
         'NCR Delhi'
     ))
+    browser.element('closeLargeModal').click()
 
 
