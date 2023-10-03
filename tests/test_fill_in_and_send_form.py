@@ -1,4 +1,4 @@
-from selene import browser, be, have, by, command
+from selene import browser, be, have, by
 
 
 def test_form():
