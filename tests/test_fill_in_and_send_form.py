@@ -34,9 +34,14 @@ def test_form():
     browser.all('.modal-content').should(have.exact_texts(
         'Testname',
         'Test_Lastname',
-        '1234567890',
         'Test@test.com',
-        'Tbilisi'
+        'Female',
+        '1234567890',
+        '25 December,2020',
+        'Maths',
+        'Sports',
+        'Tbilisi',
+        'NCR Delhi'
     ))
 
 
