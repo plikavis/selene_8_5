@@ -21,7 +21,7 @@ def test_form():
     # Subject
     browser.element('#subjectsInput').type('Maths').press_enter()
     # Choose hobby
-    # browser.element('[for=hobbies-checkbox-1]').with_(timeout=4.0).click()
+    browser.element('[for=hobbies-checkbox-1]').with_(timeout=4.0).click()
     # Write address
     browser.element('#currentAddress').type('Tbilisi')
     # Choose country and city
@@ -31,7 +31,12 @@ def test_form():
     # Press button
     browser.element('#submit').click()
 
-    browser.element('.modal-content').should(be.visible)
-
+    browser.all('.modal-content').should(have.exact_texts(
+        'Testname',
+        'Test_Lastname',
+        '1234567890',
+        'Test@test.com',
+        'Tbilisi'
+    ))
 
 
