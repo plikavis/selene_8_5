@@ -43,7 +43,7 @@ def test_form():
         '25 December,2020',
         'Maths',
         'Sports',
-        '',
+        '123.png',
         'Tbilisi',
         'NCR Delhi'
     ))
